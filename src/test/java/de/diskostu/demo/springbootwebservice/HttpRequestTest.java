@@ -19,8 +19,7 @@ public class HttpRequestTest {
 
     @Test
     public void greetingShouldReturnDefaultMessage() {
-        Assertions.assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/greeting",
-                String.class))
-                  .containsIgnoringCase("world");
+        final String url = "http://localhost:" + port + "/greeting";
+        Assertions.assertThat(this.restTemplate.getForObject(url, String.class)).containsIgnoringCase("world");
     }
 }
